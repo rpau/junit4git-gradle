@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017 Schibsted Media Group. All rights reserved.
  */
-package org.junit4git.sample;
+package org.junit4git.dao;
 
 import javax.sql.DataSource;
 
@@ -14,7 +14,6 @@ import org.junit.*;
 import org.junit.runner.RunWith;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.walkmod.junit4git.junit4.Junit4GitRunner;
-import org.walkmod.junit5git.sample.MessagesDAOImpl;
 
 @RunWith(Junit4GitRunner.class)
 public class MessagesDAOImplTest {

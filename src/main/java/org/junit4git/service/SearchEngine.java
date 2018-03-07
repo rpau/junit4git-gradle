@@ -1,4 +1,6 @@
-package org.walkmod.junit5git.sample;
+package org.junit4git.service;
+
+import org.junit4git.dao.MesssagesDAO;
 
 import java.util.List;
 import java.util.stream.Collectors;

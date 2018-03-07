@@ -1,6 +1,8 @@
-package org.walkmod.junit5git.sample;
+package org.junit4git.service;
 
 import org.junit.Test;
+import org.junit4git.dao.MesssagesDAO;
+import org.junit4git.service.SearchEngine;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;

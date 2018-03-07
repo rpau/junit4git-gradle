@@ -1,4 +1,4 @@
-package org.walkmod.junit5git.sample;
+package org.junit4git.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
