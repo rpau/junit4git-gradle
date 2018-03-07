@@ -9,15 +9,21 @@ import org.arquillian.cube.HostIp;
 import org.arquillian.cube.HostPort;
 import org.flywaydb.core.Flyway;
 import org.jboss.arquillian.junit.Arquillian;
-import org.junit.Assert;
+import org.jboss.arquillian.junit.ArquillianTest;
+import org.jboss.arquillian.junit.ArquillianTestClass;
+import org.junit.*;
 import org.junit.runner.RunWith;
-import org.junit.Before;
-import org.junit.Test;
 import org.postgresql.ds.PGSimpleDataSource;
+import org.walkmod.junit4git.junit4.Junit4GitRunner;
 import org.walkmod.junit5git.sample.MessagesDAOImpl;
 
-@RunWith(Arquillian.class)
+@RunWith(Junit4GitRunner.class)
 public class MessagesDAOImplTest {
+
+  @ClassRule
+  public static ArquillianTestClass arquillianTestClass = new ArquillianTestClass();
+  @Rule
+  public ArquillianTest arquillianTest = new ArquillianTest();
 
   @HostPort(containerName = "postgres*", value = 5432)
   int POSTGRES_PORT = 0;
