@@ -7,7 +7,6 @@ repositories {
      mavenCentral()
  }
 
-
 buildscript {
     repositories {
         mavenCentral()
@@ -42,6 +41,31 @@ jacocoTestReport {
     }
 }
 
+sourceSets {
+    integration {
+        java { 
+            srcDir 'src/integration/java' 
+        }
+        resources { 
+            srcDir 'src/integration/resources' 
+        }
+        compileClasspath += sourceSets.test.compileClasspath
+        runtimeClasspath += sourceSets.test.runtimeClasspath
+    }
+}
+
+configurations {
+    integrationCompile.extendsFrom testCompile
+    integrationRuntime.extendsFrom testRuntime
+}
+
+task integration(type: Test) {
+    description = 'Run the integration tests'
+    group = 'verification'
+    testClassesDirs = sourceSets.integration.output
+    classpath = sourceSets.integration.runtimeClasspath
+}
+
 check.dependsOn jacocoTestReport
 
 ext.junitJupiterVersion  = '5.0.1'
@@ -49,8 +73,11 @@ ext.junitJupiterVersion  = '5.0.1'
 apply plugin: 'org.junit.platform.gradle.plugin'
 
 dependencies {
-    testCompile("org.walkmod:junit5git:1.1")
     // JUnit Jupiter API and TestEngine implementation
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+
+     integrationCompile "org.arquillian.cube:arquillian-cube-docker:1.9.1",
+                "org.jboss.arquillian.junit:arquillian-junit-standalone:1.1.13.Final",
+                "org.walkmod:junit5git:1.1"
 }
