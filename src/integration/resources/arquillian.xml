@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+    http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <!-- We have to bind the docker hostname and port, otherwise RMI will choose a random port, which we can't forward to the docker host.
+     RMI is a difficult protocol to configure :(.    -->
+
+    <extension qualifier="docker">
+        <property name="serverUri">unix:///var/run/docker.sock</property>
+        <property name="tlsVerify">false</property>
+        <property name="dockerContainers">
+            postgres*:
+                image: postgres:9.6.2-alpine
+                ports:
+                - "5432"
+                environment:
+                - "POSTGRES_USER=postgres"
+                - "POSTGRES_PASSWORD=postgres"
+                - "POSTGRES_DB=root"
+        </property>
+
+        <property name="cubeSpecificProperties">
+            postgres*:
+                await:
+                    strategy: log
+                    match: 'LOG:  autovacuum launcher started'
+                    occurrences: 2
+        </property>
+    </extension>
+
+</arquillian>

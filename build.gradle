@@ -74,10 +74,13 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 
 dependencies {
     // JUnit Jupiter API and TestEngine implementation
+    compile 'org.flywaydb:flyway-core:4.1.2'
+    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 
-     integrationCompile "org.arquillian.cube:arquillian-cube-docker:1.9.1",
-                "org.jboss.arquillian.junit:arquillian-junit-standalone:1.1.13.Final",
-                "org.walkmod:junit5git:1.1"
+     integrationCompile  'org.arquillian.cube:arquillian-cube-docker:1.12.0',
+             'org.jboss.arquillian.junit:arquillian-junit-standalone:1.2.0.Final',
+             'com.github.davidmoten:rxjava-extras:0.8.0.13',
+             "org.walkmod:junit5git:1.1"
 }
