@@ -13,7 +13,6 @@
 
 # Ignore Gradle GUI config
 gradle-app.setting
-junit4git.iml
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
@@ -26,3 +25,5 @@ junit4git.iml
 
 # End of https://www.gitignore.io/api/gradle,intellij
 
+junit4git-gradle.iml
+**/out/
