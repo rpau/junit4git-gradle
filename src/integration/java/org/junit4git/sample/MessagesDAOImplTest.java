@@ -8,7 +8,6 @@ import javax.sql.DataSource;
 import org.arquillian.cube.HostIp;
 import org.arquillian.cube.HostPort;
 import org.flywaydb.core.Flyway;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.ArquillianTest;
 import org.jboss.arquillian.junit.ArquillianTestClass;
 import org.junit.*;
@@ -52,9 +51,7 @@ public class MessagesDAOImplTest {
 
     this.dataSource = dataSource;
   }
-
-
-
+  
   @Test
   public void  testWhenMessagesAreInsertedThenAreRecovered() throws Exception {
     String message = "hello voxxed days!";
