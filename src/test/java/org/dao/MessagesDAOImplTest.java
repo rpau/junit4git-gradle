@@ -1,9 +1,7 @@
 /*
  * Copyright (c) 2017 Schibsted Media Group. All rights reserved.
  */
-package org.junit4git.dao;
-
-import javax.sql.DataSource;
+package org.dao;
 
 import org.arquillian.cube.HostIp;
 import org.arquillian.cube.HostPort;
@@ -14,6 +12,8 @@ import org.junit.*;
 import org.junit.runner.RunWith;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.walkmod.junit4git.junit4.Junit4GitRunner;
+
+import javax.sql.DataSource;
 
 @RunWith(Junit4GitRunner.class)
 public class MessagesDAOImplTest {

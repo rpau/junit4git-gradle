@@ -1,6 +1,6 @@
-package org.junit4git.service;
+package org.service;
 
-import org.junit4git.dao.MesssagesDAO;
+import org.dao.MesssagesDAO;
 
 import java.util.List;
 import java.util.stream.Collectors;

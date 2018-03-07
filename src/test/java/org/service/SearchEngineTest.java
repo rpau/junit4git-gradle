@@ -1,9 +1,9 @@
-package org.junit4git.service;
+package org.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
-import org.junit4git.dao.MesssagesDAO;
+import org.dao.MesssagesDAO;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -11,7 +11,6 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 
-@RunWith(BlockJUnit4ClassRunner.class)
 public class SearchEngineTest {
 
   @Test
