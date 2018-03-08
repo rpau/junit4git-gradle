@@ -15,7 +15,6 @@ import org.walkmod.junit4git.junit4.Junit4GitRunner;
 
 import javax.sql.DataSource;
 
-@RunWith(Junit4GitRunner.class)
 public class MessagesDAOImplTest {
 
   @ClassRule
