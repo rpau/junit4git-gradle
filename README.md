@@ -1,1 +1,1 @@
-# junit4git-gradle
+# junit4git-maven
