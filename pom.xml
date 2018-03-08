@@ -18,6 +18,20 @@
     </properties>
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20.1</version>
+                <configuration>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>org.walkmod.junit4git.junit4.Junit4GitListener</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -30,4 +44,12 @@
         </plugins>
     </build>
     <name>junit4git-gradle</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.walkmod</groupId>
+            <artifactId>junit5git</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
