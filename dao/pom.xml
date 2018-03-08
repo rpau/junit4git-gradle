@@ -5,10 +5,10 @@
 
     <parent>
         <groupId>org.walkmod</groupId>
-        <artifactId>junit4git-gradle-parent</artifactId>
+        <artifactId>junit4git-maven-parent</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>junit4git-gradle-dao</artifactId>
+    <artifactId>junit4git-maven-dao</artifactId>
     <build>
         <plugins>
             <plugin>
