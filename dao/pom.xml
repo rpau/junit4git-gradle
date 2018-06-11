@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.walkmod</groupId>
             <artifactId>junit5git</artifactId>
-            <version>1.1</version>
+            <version>1.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
